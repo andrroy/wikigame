@@ -14,13 +14,13 @@
 		2E074C9519B64CD3009FD823 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E074C9419B64CD3009FD823 /* main.m */; };
 		2E074C9919B64CD3009FD823 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E074C9819B64CD3009FD823 /* AppDelegate.m */; };
 		2E074C9C19B64CD3009FD823 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E074C9A19B64CD3009FD823 /* Main.storyboard */; };
-		2E074C9F19B64CD3009FD823 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E074C9E19B64CD3009FD823 /* ViewController.m */; };
 		2E074CA119B64CD3009FD823 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E074CA019B64CD3009FD823 /* Images.xcassets */; };
 		2E074CA819B64CD3009FD823 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E074CA719B64CD3009FD823 /* XCTest.framework */; };
 		2E074CA919B64CD3009FD823 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E074C8819B64CD3009FD823 /* Foundation.framework */; };
 		2E074CAA19B64CD3009FD823 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E074C8C19B64CD3009FD823 /* UIKit.framework */; };
 		2E074CB219B64CD3009FD823 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E074CB019B64CD3009FD823 /* InfoPlist.strings */; };
 		2E074CB419B64CD3009FD823 /* wikigameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E074CB319B64CD3009FD823 /* wikigameTests.m */; };
+		2E074CBF19B657B0009FD823 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E074CBE19B657B0009FD823 /* WebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +45,14 @@
 		2E074C9719B64CD3009FD823 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2E074C9819B64CD3009FD823 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2E074C9B19B64CD3009FD823 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2E074C9D19B64CD3009FD823 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2E074C9E19B64CD3009FD823 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		2E074CA019B64CD3009FD823 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2E074CA619B64CD3009FD823 /* wikigameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wikigameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E074CA719B64CD3009FD823 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		2E074CAF19B64CD3009FD823 /* wikigameTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "wikigameTests-Info.plist"; sourceTree = "<group>"; };
 		2E074CB119B64CD3009FD823 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2E074CB319B64CD3009FD823 /* wikigameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wikigameTests.m; sourceTree = "<group>"; };
+		2E074CBD19B657B0009FD823 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		2E074CBE19B657B0009FD823 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,10 +115,10 @@
 				2E074C9719B64CD3009FD823 /* AppDelegate.h */,
 				2E074C9819B64CD3009FD823 /* AppDelegate.m */,
 				2E074C9A19B64CD3009FD823 /* Main.storyboard */,
-				2E074C9D19B64CD3009FD823 /* ViewController.h */,
-				2E074C9E19B64CD3009FD823 /* ViewController.m */,
 				2E074CA019B64CD3009FD823 /* Images.xcassets */,
 				2E074C8F19B64CD3009FD823 /* Supporting Files */,
+				2E074CBD19B657B0009FD823 /* WebViewController.h */,
+				2E074CBE19B657B0009FD823 /* WebViewController.m */,
 			);
 			path = wikigame;
 			sourceTree = "<group>";
@@ -249,9 +249,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E074C9F19B64CD3009FD823 /* ViewController.m in Sources */,
 				2E074C9919B64CD3009FD823 /* AppDelegate.m in Sources */,
 				2E074C9519B64CD3009FD823 /* main.m in Sources */,
+				2E074CBF19B657B0009FD823 /* WebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
