@@ -15,7 +15,12 @@
 @implementation WebViewController
 @synthesize webView = webView;
 
+NSString *start_url = NULL;
+NSString *end_url = NULL;
+
+NSString *lastURL = NULL;
 NSString *currentURL = NULL;
+
 NSInteger counter = 0;
 
 
@@ -24,10 +29,15 @@ NSInteger counter = 0;
     
     if (navigationType == UIWebViewNavigationTypeLinkClicked) {
         counter++;
-        currentURL = self.webView.request.URL.absoluteString;
-        NSLog(@"Last page was: %@", currentURL);
-        NSLog(@"New page: %@", request);
+        lastURL = self.webView.request.URL.absoluteString;
+        currentURL = [[request URL] absoluteString];
+        NSLog(@"Last page was: %@", lastURL);
+        NSLog(@"New page: %@", currentURL);
         NSLog(@"Clicks: %zd", counter);
+        
+        if( [currentURL isEqualToString:end_url] ){
+            NSLog(@"DU VANT OMG OMG");
+        }
     
     }
     
@@ -50,8 +60,8 @@ NSInteger counter = 0;
     self.webView.delegate = self;
     
     NSDictionary *dict = [self getTask];
-    NSString *start_url = dict[@"start_url"];
-    NSString *end_url = dict[@"end_url"];
+    start_url = dict[@"start_url"];
+    end_url = dict[@"end_url"];
     NSLog(@"START: %@", start_url);
     NSLog(@"END: %@", end_url);
 
@@ -121,7 +131,7 @@ NSInteger counter = 0;
     for (NSMutableDictionary *dictionary in array)
     {
         NSString *start = dictionary[@"start_url"];
-        NSString *end = dictionary[@"start_url"];
+        NSString *end = dictionary[@"end_url"];
         
         dict = @{
                   @"start_url" : start,
