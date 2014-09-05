@@ -11,7 +11,7 @@
 @interface WebViewController : UIViewController<UIWebViewDelegate> {
     UIWebView* mWebView;
 }
-//@interface WebViewController : UIViewController;
+- (NSDictionary *)getTask;
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @end
