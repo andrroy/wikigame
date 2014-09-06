@@ -7,6 +7,7 @@
 //
 
 #import "WebViewController.h"
+#import "HomeScreenViewController.h"
 
 @interface WebViewController ()
 
@@ -37,8 +38,16 @@ NSInteger counter = 0;
         currentURL = [[request URL] absoluteString];
         
         // If true, user has won
-        if( [currentURL isEqualToString:end_url] ){
-            NSLog(@"DU VANT OMG ");
+        if( [currentURL isEqualToString:end_url] )
+        {
+            // Temp dialog
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You won (temp)"
+                                                            message:[NSString stringWithFormat:@"You found the page in %li clicks", (long)counter]
+                                                            delegate:self
+                                                            cancelButtonTitle:@"Home"
+                                                            otherButtonTitles:nil, nil];
+            
+            [alert show];
         }
     
     }
@@ -88,6 +97,8 @@ NSInteger counter = 0;
     // Dispose of any resources that can be recreated.
 }
 
+
+// Get task from REST server
 - (NSDictionary *)getTask {
     
     NSDictionary *dict;
@@ -117,6 +128,20 @@ NSInteger counter = 0;
     
     
     return dict;
+}
+
+// When alert View is interacted with
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    // the user clicked Home
+    if (buttonIndex == 0)
+    {
+        // Go to home view
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:
+                                    @"Main" bundle:[NSBundle mainBundle]];
+        UIViewController *homeScreenViewController = [storyboard instantiateViewControllerWithIdentifier:@"HomeScreenViewController"];
+        [self presentViewController:homeScreenViewController animated:YES completion:nil];
+        
+    }
 }
 
 @end

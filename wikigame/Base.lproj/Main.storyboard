@@ -7,7 +7,7 @@
         <!--Home Screen View Controller-->
         <scene sceneID="Pxo-cL-Z4r">
             <objects>
-                <viewController id="mKQ-NM-k4d" customClass="HomeScreenViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeScreenViewController" id="mKQ-NM-k4d" customClass="HomeScreenViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FBM-K0-VdW"/>
                         <viewControllerLayoutGuide type="bottom" id="o4g-jr-Ncd"/>
