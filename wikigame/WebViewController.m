@@ -36,7 +36,7 @@ NSInteger counter = 0;
         NSLog(@"Clicks: %zd", counter);
         
         if( [currentURL isEqualToString:end_url] ){
-            NSLog(@"DU VANT OMG OMG");
+            NSLog(@"DU VANT OMG ");
         }
     
     }
@@ -72,7 +72,12 @@ NSInteger counter = 0;
     NSLog(@"Done loading web view");
     NSLog(@"Clicks: %zd", counter);
     
-    
+}
+
+- (void) webViewDidFinishLoad:(UIWebView *)WebView
+{
+    // Remove unwanted elements
+    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('header')[0].style.display='none'"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -80,37 +85,6 @@ NSInteger counter = 0;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-//- (void)getTask
-//{
-//    NSError *error;
-//    NSURL *url = [NSURL URLWithString:@"http://localhost:8000/tasks/"];
-//    NSData *data = [NSData dataWithContentsOfURL:url];
-//    
-//    NSMutableArray *array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-//    if (error)
-//    NSLog(@"JSONObjectWithData error: %@", error);
-//    
-//    for (NSMutableDictionary *dictionary in array)
-//    {
-//        NSString *start = dictionary[@"start_url"];
-//        NSLog(@"START: %@", start);
-//        
-//        NSString *end = dictionary[@"start_url"];
-//        NSLog(@"END: %@", end);
-//        
-//        
-//        NSString *arrayString = dictionary[@"array"];
-//        if (arrayString)
-//        {
-//            NSData *data = [arrayString dataUsingEncoding:NSUTF8StringEncoding];
-//            NSError *error = nil;
-//            dictionary[@"array"] = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-//            if (error)
-//            NSLog(@"JSONObjectWithData for array error: %@", error);
-//        }
-//    }
-//}
 
 - (NSDictionary *)getTask {
     
