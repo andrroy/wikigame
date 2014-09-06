@@ -28,15 +28,15 @@ NSInteger counter = 0;
 {
     // If link is clicked
     if (navigationType == UIWebViewNavigationTypeLinkClicked) {
+        // Update counter and GUI
         counter++;
-//        clicksDisplayed.text = @"%i";
         clicksDisplayed.text = [NSString stringWithFormat:@"%li", (long)counter];
+        
+        // Get current at previous url
         lastURL = self.webView.request.URL.absoluteString;
         currentURL = [[request URL] absoluteString];
-        NSLog(@"Last page was: %@", lastURL);
-        NSLog(@"New page: %@", currentURL);
-        NSLog(@"Clicks: %zd", counter);
         
+        // If true, user has won
         if( [currentURL isEqualToString:end_url] ){
             NSLog(@"DU VANT OMG ");
         }

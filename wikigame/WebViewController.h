@@ -14,7 +14,6 @@
 }
 
 - (NSDictionary *) getTask;
-- (NSString *) sanitzeWikiURL;
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @end
