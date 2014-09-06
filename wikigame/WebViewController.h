@@ -10,9 +10,10 @@
 
 @interface WebViewController : UIViewController<UIWebViewDelegate> {
     UIWebView* mWebView;
+    IBOutlet UILabel *clicksDisplayed;
 }
-- (NSDictionary *) getTask;
 
+- (NSDictionary *) getTask;
 - (NSString *) sanitzeWikiURL;
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;

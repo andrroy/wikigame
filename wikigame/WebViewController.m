@@ -26,9 +26,11 @@ NSInteger counter = 0;
 
 -(BOOL) webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
-    
+    // If link is clicked
     if (navigationType == UIWebViewNavigationTypeLinkClicked) {
         counter++;
+//        clicksDisplayed.text = @"%i";
+        clicksDisplayed.text = [NSString stringWithFormat:@"%li", (long)counter];
         lastURL = self.webView.request.URL.absoluteString;
         currentURL = [[request URL] absoluteString];
         NSLog(@"Last page was: %@", lastURL);
