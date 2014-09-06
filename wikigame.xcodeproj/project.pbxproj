@@ -54,8 +54,8 @@
 		2E074CB319B64CD3009FD823 /* wikigameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wikigameTests.m; sourceTree = "<group>"; };
 		2E074CBD19B657B0009FD823 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		2E074CBE19B657B0009FD823 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
-		2E074CC019B78A5A009FD823 /* HomeScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeScreenViewController.h; sourceTree = "<group>"; };
-		2E074CC119B78A5A009FD823 /* HomeScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeScreenViewController.m; sourceTree = "<group>"; };
+		2E074CC019B78A5A009FD823 /* HomeScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeScreenViewController.h; path = ../HomeScreenViewController.h; sourceTree = "<group>"; };
+		2E074CC119B78A5A009FD823 /* HomeScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeScreenViewController.m; path = ../HomeScreenViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +85,6 @@
 		2E074C7C19B64CD3009FD823 = {
 			isa = PBXGroup;
 			children = (
-				2E074CC019B78A5A009FD823 /* HomeScreenViewController.h */,
-				2E074CC119B78A5A009FD823 /* HomeScreenViewController.m */,
 				2E074C8E19B64CD3009FD823 /* wikigame */,
 				2E074CAD19B64CD3009FD823 /* wikigameTests */,
 				2E074C8719B64CD3009FD823 /* Frameworks */,
@@ -117,6 +115,8 @@
 		2E074C8E19B64CD3009FD823 /* wikigame */ = {
 			isa = PBXGroup;
 			children = (
+				2E074CC019B78A5A009FD823 /* HomeScreenViewController.h */,
+				2E074CC119B78A5A009FD823 /* HomeScreenViewController.m */,
 				2E074C9719B64CD3009FD823 /* AppDelegate.h */,
 				2E074C9819B64CD3009FD823 /* AppDelegate.m */,
 				2E074C9A19B64CD3009FD823 /* Main.storyboard */,
