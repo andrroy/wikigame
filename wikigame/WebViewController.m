@@ -37,7 +37,7 @@ NSInteger counter = 0;
         lastURL = self.webView.request.URL;
         currentURL = [request URL] ;
         
-        // If true, user has won
+        // Check if user has won
         if( [currentURL isEqual:end_url] )
         {
             counter = 0; // Reset counter
@@ -51,6 +51,31 @@ NSInteger counter = 0;
             
             [alert show];
         }
+        
+        // Check if user has left wikipedia domain
+        NSString *temp = [currentURL host];
+        
+        if( [temp rangeOfString:@"wikipedia.org"].location == NSNotFound ){
+            NSLog(@"LEFT WIKIPEDIA GOD DAMMIT");
+            NSLog(@"Current URL is now: %@", temp);
+            NSLog(@"Going back to wikipedia");
+            
+            
+            // Go back to previous URL
+            NSURLRequest *request = [NSURLRequest requestWithURL:lastURL];
+            [self.webView loadRequest:request];
+            
+            // Notify user to behave
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"External link detected"
+                                                            message:[NSString stringWithFormat:@"You have been redirected back to wikipedia"]
+                                                           delegate:self
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil, nil];
+            
+            [alert show];
+
+        }
+        
     
     }
     
