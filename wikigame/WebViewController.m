@@ -16,11 +16,11 @@
 @implementation WebViewController
 @synthesize webView = webView;
 
-NSString *start_url = NULL;
-NSString *end_url = NULL;
+NSURL *start_url = NULL;
+NSURL *end_url = NULL;
 
-NSString *lastURL = NULL;
-NSString *currentURL = NULL;
+NSURL *lastURL = NULL;
+NSURL *currentURL = NULL;
 
 NSInteger counter = 0;
 
@@ -34,12 +34,14 @@ NSInteger counter = 0;
         clicksDisplayed.text = [NSString stringWithFormat:@"%li", (long)counter];
         
         // Get current at previous url
-        lastURL = self.webView.request.URL.absoluteString;
-        currentURL = [[request URL] absoluteString];
+        lastURL = self.webView.request.URL;
+        currentURL = [request URL] ;
         
         // If true, user has won
-        if( [currentURL isEqualToString:end_url] )
+        if( [currentURL isEqual:end_url] )
         {
+            counter = 0; // Reset counter
+            
             // Temp dialog
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You won (temp)"
                                                             message:[NSString stringWithFormat:@"You found the page in %li clicks", (long)counter]
@@ -71,17 +73,21 @@ NSInteger counter = 0;
     self.webView.delegate = self;
     
     NSDictionary *dict = [self getTask];
-    start_url = dict[@"start_url"];
-    end_url = dict[@"end_url"];
+    start_url = [NSURL URLWithString: dict[@"start_url"] ];
+    end_url = [NSURL URLWithString: dict[@"end_url"] ];
     NSLog(@"START: %@", start_url);
     NSLog(@"END: %@", end_url);
-
     
-    NSURL *pageUrl = [NSURL URLWithString:start_url];
+    NSLog(@"Path::: %@", [start_url path]);
+    NSLog(@"Path::: %@", [end_url path]);
+    
+    NSLog(@"Host::: %@", [end_url host]);
+    
+    
+    NSURL *pageUrl = start_url;
     NSURLRequest *request = [NSURLRequest requestWithURL:pageUrl];
     [webView loadRequest:request];
     NSLog(@"Done loading web view");
-    NSLog(@"Clicks: %zd", counter);
     
 }
 
